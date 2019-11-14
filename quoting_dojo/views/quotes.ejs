@@ -16,14 +16,15 @@
         <h1>Check out all the awesome quotes!</h1>
         <% for (const quote of quotes) { %>
             <div class="container">
-                <h3>Author:
-                    <%= quote.author %>
-                </h3>
-                <p>Quote:
-                    <%= quote.quote %>
-                </p>
+
                 <p>
-                    <%= new Date(Date.now()).toLocaleString();%>
+                    "
+                    <%= quote.quote %>"
+                </p>
+                <p style="text-align: center; color:blue">
+                    -
+                    <%= quote.author %> at
+                        <%= new Date(Date.now()).toLocaleString();%>
                 </p>
             </div>
 
@@ -31,9 +32,9 @@
             <% } %>
 
 
+                <button type="button" class="btn btn-secondary btn-lg" style="margin-top:20px ;"><a href="/" style="color:aliceblue">Home</a></button>
     </div>
 
-    <button type="button" class="btn btn-secondary btn-lg" style="margin-top:20px ;"><a href="/" style="color:aliceblue">Home</a></button>
 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
