@@ -37,7 +37,7 @@ process.on('SIGINT', () => {
 })
 
 //read all the files in the model dir and check if it is a js file before requiring it
-fs.readdirSync(modelsPath).forEach(file => {
+fs.readdirSync(modelPath).forEach(file => {
     if (reg.test(file)) {
         require(path.join(modelPath, file));
     }

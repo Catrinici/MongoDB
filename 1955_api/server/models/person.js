@@ -7,5 +7,6 @@ const personSchema = new Schema({
         required: true,
         trim: true,
     }
-})
-module.exports = mongoose.model('Person', personSchema)
+});
+
+module.exports = mongoose.model('Person', personSchema);

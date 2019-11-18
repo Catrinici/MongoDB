@@ -1,28 +1,26 @@
 const Person = require('mongoose').model('Person');
 
 module.exports = {
-    index(req, res) {
+    index(request, response) {
         Person.find({})
-            .then(people => res.json(people))
-            .catch(error => res.json(error));
+            .then(people => response.json(people))
+            .catch(error => response.json(error));
     },
-
-    show(req, res) {
-        Person.findOne(req.params)
+    show(request, response) {
+        Person.findOne(request.params)
             .then(person => {
-                res.json(person ? person : 'No such person existed in 1995!!!');
+                response.json(person ? person : 'No such person existed in 1955!!');
             })
-            .catch(error => res.json(error))
+            .catch(error => response.json(error));
     },
-
-    create(req, res) {
-        Person.create(req.params)
-            .then(person => res.json(person))
-            .catch(error = res.json(erorr));
+    create(request, response) {
+        Person.create(request.params)
+            .then(person => response.json(person))
+            .catch(error => response.json(error));
     },
-    destroy(req, res) {
-        Person.remove(req.params)
-            .then(result => res.json(result))
-            .catch(error => res.json(error))
-    }
-}
+    destroy(request, response) {
+        Person.remove(request.params)
+            .then(result => response.json(result))
+            .catch(error => response.json(error));
+    },
+};
